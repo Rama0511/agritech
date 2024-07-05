@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Run Batch File</title>
+    <script type="text/javascript">
+        function runBatch() {
+            try {
+                var shell = new ActiveXObject("WScript.Shell");
+                shell.Run("run_main.bat");
+            } catch (e) {
+                alert("This action is restricted to Internet Explorer with appropriate ActiveX settings.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Run Batch File Example</h1>
+    <button onclick="runBatch()">Run Batch File</button>
+</body>
+</html>

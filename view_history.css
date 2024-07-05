@@ -1,0 +1,87 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+.navbar {
+    background-color: #7fa158;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar img {
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.navbar h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+}
+.container {
+    margin: 20px;
+}
+h1, h2, h3, h4, h5 {
+    color: #4CAF50;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+form {
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+select, input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.btn-back {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.btn-back:hover {
+    background-color: #45a049;
+}
+canvas {
+    margin-top: 20px;
+}

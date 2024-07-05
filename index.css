@@ -1,0 +1,281 @@
+/* Global Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #7fa158;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar img {
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff; /* Memberi border putih pada gambar untuk kontras */
+  }
+  
+  .navbar h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  /* DataTables Wrapper */
+  .dataTables_wrapper {
+    width: 95%; /* Ubah menjadi 95% agar lebih luas */
+    max-width: 100%; /* Menjamin tidak terpotong pada layar kecil */
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Memberikan scroll horizontal jika diperlukan */
+  }
+  
+  table.dataTable {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto; /* Memberikan scroll horizontal jika tabel terlalu lebar */
+    display: block; /* Mengatasi tabel terpotong dengan overflow */
+  }
+  
+  table.dataTable thead th,
+  table.dataTable tbody td {
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap; /* Agar teks tidak mematah-matah di dalam sel tabel */
+  }
+  
+  /* Table Container */
+  .table-container {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Memberikan scroll horizontal jika tabel terlalu lebar */
+  }
+  
+  /* Summary Container */
+  .summary-container-title h2 {
+    text-align: center;
+    color: #4f4f4f;
+    margin-bottom: 20px;
+  }
+  
+  .summary-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Memastikan item-summary dapat melingkar jika perlu */
+    margin-top: 20px;
+  }
+  
+  .summary-item {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    margin: 0 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .summary-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .summary-item p {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .summary-item .alat-type {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .summary-item .komoditi-type,
+  .summary-item .jenis-tanah-type {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .summary-item .komoditi-type > div,
+  .summary-item .jenis-tanah-type > div {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .summary-item .komoditi-type h5,
+  .summary-item .jenis-tanah-type h5 {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Status Indicator */
+  .status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  .status-aktif {
+    background-color: #7fa158;
+  }
+  
+  .status-mati {
+    background-color: #d9534f;
+  }
+  
+  /* Responsive Margin */
+  .mv {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .summary-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .summary-item {
+      margin: 10px 0;
+    }
+    
+    .summary-item .komoditi-type,
+    .summary-item .jenis-tanah-type {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .summary-item .komoditi-type > div,
+    .summary-item .jenis-tanah-type > div {
+      margin: 5px 0;
+    }
+    
+    /* Tabel pada layar kecil */
+    table.dataTable thead,
+    table.dataTable tbody,
+    table.dataTable th,
+    table.dataTable td,
+    table.dataTable tr {
+      display: block;
+    }
+  
+    table.dataTable thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    table.dataTable tbody tr {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+    }
+  
+    table.dataTable td {
+      border: none;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    table.dataTable td:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+  
+    table.dataTable td:nth-of-type(1):before {
+      content: "Nama: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(2):before {
+      content: "Komoditi: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(3):before {
+      content: "Jenis: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(4):before {
+      content: "Keterangan: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(5):before {
+      content: "Wilayah: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(6):before {
+      content: "Stasiun: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(7):before {
+      content: "Waktu Pasang: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(8):before {
+      content: "Tanggal Pasang: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(9):before {
+      content: "Status: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(10):before {
+      content: "Waktu Update: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(11):before {
+      content: "Tanggal Update: ";
+      font-weight: bold;
+    }
+  
+    table.dataTable td:nth-of-type(12):before {
+      content: "Action: ";
+      font-weight: bold;
+    }
+  }
+  

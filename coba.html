@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get Prediction</h1>
+    <button id="predictButton">Get Prediction</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('predictButton').addEventListener('click', function() {
+            const data = {
+                "umur_forcing": -67,
+                "innitial": 28.6,
+                "avg_airhum": 80.52,
+                "max_airhum": 94.92,
+                "min_airhum": 79.50,
+                "avg_airtemp": 27,
+                "max_airtemp": 33.90,
+                "min_airtemp": 24.40,
+                "avg_uv": 1.15,
+                "max_uv": 4.59,
+                "avg_ws": 2.26,
+                "avg_airpress": 1010.5,
+                "max_airpress": 1012.1,
+                "min_airpress": 1008.1,
+                "Tekstur1_Debu": 0,
+                "Tekstur1_Lempung berdebu": 0,
+                "Tekstur1_Lempung liat berpasir": 1,
+                "Tekstur1_Liat berpasir": 0
+            };
+
+            fetch('https://api.kedatuan.site/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = 'Prediction: ' + data.prediction;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').textContent = 'An error occurred';
+            });
+        });
+    </script>
+</body>
+</html>
